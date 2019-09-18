@@ -1,0 +1,312 @@
+setting 'ivy.default.settings.dir' to 'jar:file:/usr/share/sbt/bin/sbt-launch.jar!/org/apache/ivy/core/settings'
+setting 'ivy.basedir' to '/root/.'
+setting 'ivy.default.conf.dir' to 'jar:file:/usr/share/sbt/bin/sbt-launch.jar!/org/apache/ivy/core/settings'
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.SshResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.VsftpResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.version.PatternVersionMatcher in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.trigger.LogTrigger in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.ant.AntBuildTrigger in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.IvyRepResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.signer.bouncycastle.OpenPGPSignatureGenerator in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.conflict.RegexpConflictManager in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.SFTPResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.osgi.updatesite.UpdateSiteResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.ant.AntCallTrigger in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.MirroredURLResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.packager.PackagerResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.DualResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.VfsResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.plugins.resolver.JarResolver in [] nor Ivy classloader
+impossible to define new type: class not found: org.apache.ivy.osgi.obr.OBRResolver in [] nor Ivy classloader
+impossible to define glob matcher: org.apache.ivy.plugins.matcher.GlobPatternMatcher was not found.
+setting 'jline.esc.timeout' to '0'
+setting 'java.runtime.name' to 'OpenJDK Runtime Environment'
+setting 'sun.boot.library.path' to '/usr/local/openjdk-8/jre/lib/amd64'
+setting 'java.vm.version' to '25.222-b10'
+setting 'java.vm.vendor' to 'Oracle Corporation'
+setting 'java.vendor.url' to 'http://java.oracle.com/'
+setting 'path.separator' to ':'
+setting 'java.vm.name' to 'OpenJDK 64-Bit Server VM'
+setting 'file.encoding.pkg' to 'sun.io'
+setting 'sun.java.launcher' to 'SUN_STANDARD'
+setting 'sun.os.patch.level' to 'unknown'
+setting 'java.vm.specification.name' to 'Java Virtual Machine Specification'
+setting 'user.dir' to '/root'
+setting 'java.runtime.version' to '1.8.0_222-b10'
+setting 'java.awt.graphicsenv' to 'sun.awt.X11GraphicsEnvironment'
+setting 'java.endorsed.dirs' to '/usr/local/openjdk-8/jre/lib/endorsed'
+setting 'os.arch' to 'amd64'
+setting 'java.io.tmpdir' to '/tmp'
+setting 'line.separator' to '
+'
+setting 'java.vm.specification.vendor' to 'Oracle Corporation'
+setting 'os.name' to 'Linux'
+setting 'sun.jnu.encoding' to 'UTF-8'
+setting 'java.library.path' to '/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib'
+setting 'java.specification.name' to 'Java Platform API Specification'
+setting 'java.class.version' to '52.0'
+setting 'sun.management.compiler' to 'HotSpot 64-Bit Tiered Compilers'
+setting 'os.version' to '4.14.141-boot2docker'
+setting 'user.home' to '/root'
+setting 'user.timezone' to 'Etc/UTC'
+setting 'java.awt.printerjob' to 'sun.print.PSPrinterJob'
+setting 'file.encoding' to 'UTF-8'
+setting 'java.specification.version' to '1.8'
+setting 'java.class.path' to '/usr/share/sbt/bin/sbt-launch.jar'
+setting 'user.name' to 'root'
+setting 'jline.shutdownhook' to 'false'
+setting 'java.vm.specification.version' to '1.8'
+setting 'sun.java.command' to '/usr/share/sbt/bin/sbt-launch.jar'
+setting 'java.home' to '/usr/local/openjdk-8/jre'
+setting 'sun.arch.data.model' to '64'
+setting 'user.language' to 'en'
+setting 'java.specification.vendor' to 'Oracle Corporation'
+setting 'awt.toolkit' to 'sun.awt.X11.XToolkit'
+setting 'java.vm.info' to 'mixed mode'
+setting 'java.version' to '1.8.0_222'
+setting 'java.ext.dirs' to '/usr/local/openjdk-8/jre/lib/ext:/usr/java/packages/lib/ext'
+setting 'sun.boot.class.path' to '/usr/local/openjdk-8/jre/lib/resources.jar:/usr/local/openjdk-8/jre/lib/rt.jar:/usr/local/openjdk-8/jre/lib/sunrsasign.jar:/usr/local/openjdk-8/jre/lib/jsse.jar:/usr/local/openjdk-8/jre/lib/jce.jar:/usr/local/openjdk-8/jre/lib/charsets.jar:/usr/local/openjdk-8/jre/lib/jfr.jar:/usr/local/openjdk-8/jre/classes'
+setting 'java.vendor' to 'Oracle Corporation'
+setting 'file.separator' to '/'
+setting 'java.vendor.url.bug' to 'http://bugreport.sun.com/bugreport/'
+setting 'sun.io.unicode.encoding' to 'UnicodeLittle'
+setting 'sun.cpu.endian' to 'little'
+setting 'sun.cpu.isalist' to ''
+setting 'ivy.default.ivy.user.dir' to '/root/.ivy2'
+setting 'ivy.home' to '/root/.ivy2'
+setting 'ivy.cache.dir' to '/root/.ivy2/cache'
+no default cache defined: set to /root/.ivy2/cache
+setting 'ivy.checksums' to 'sha1,md5'
+setting 'ivy.basedir' to '/root/.sbt/boot'
+setting 'basedir' to '/root/.sbt/boot'
+setting 'scala' to '2.12.7'
+:: resolving dependencies :: org.scala-sbt#boot-scala;1.0
+	confs: [default]
+	validate = true
+	refresh = false
+resolving dependencies for configuration 'default'
+== resolving dependencies for org.scala-sbt#boot-scala;1.0 [default]
+loadData of org.scala-sbt#boot-scala;1.0 of rootConf=default
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-compiler;2.12.7 [default->default]
+loadData of org.scala-lang#scala-compiler;2.12.7 of rootConf=default
+	using redefined-public to resolve org.scala-lang#scala-compiler;2.12.7
+redefined-public: Checking cache for: dependency: org.scala-lang#scala-compiler;2.12.7 {default=[default, optional(default)]}
+redefined-public: no namespace defined: using system
+No entry is found in the ModuleDescriptorCache : /root/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.12.7.xml
+post 1.3 ivy file: using exact as default matcher
+	resolver not found: null => trying to use the one configured for org.scala-lang#scala-compiler;2.12.7
+	configured resolver found for org.scala-lang#scala-compiler;2.12.7: redefined-public: saving this data
+	found ivy file in cache for org.scala-lang#scala-compiler;2.12.7 (resolved by redefined-public): /root/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.12.7.xml
+redefined-public: module revision found in cache: org.scala-lang#scala-compiler;2.12.7
+redefined-public: no latest strategy defined: using default
+	found org.scala-lang#scala-compiler;2.12.7 in redefined-public
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-compiler;2.12.7 [default->runtime]
+loadData of org.scala-lang#scala-compiler;2.12.7 of rootConf=default
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-compiler;2.12.7 [default->compile]
+loadData of org.scala-lang#scala-compiler;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->master(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+	using redefined-public to resolve org.scala-lang#scala-library;2.12.7
+redefined-public: Checking cache for: dependency: org.scala-lang#scala-library;2.12.7 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+No entry is found in the ModuleDescriptorCache : /root/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.7.xml
+post 1.3 ivy file: using exact as default matcher
+	resolver not found: null => trying to use the one configured for org.scala-lang#scala-library;2.12.7
+	configured resolver found for org.scala-lang#scala-library;2.12.7: redefined-public: saving this data
+	found ivy file in cache for org.scala-lang#scala-library;2.12.7 (resolved by redefined-public): /root/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.7.xml
+redefined-public: module revision found in cache: org.scala-lang#scala-library;2.12.7
+	found org.scala-lang#scala-library;2.12.7 in redefined-public
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->compile(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->default]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->runtime]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->master]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->runtime(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [compile->master(*)]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+	using redefined-public to resolve org.scala-lang#scala-reflect;2.12.7
+redefined-public: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.7 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+No entry is found in the ModuleDescriptorCache : /root/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.12.7.xml
+post 1.3 ivy file: using exact as default matcher
+	resolver not found: null => trying to use the one configured for org.scala-lang#scala-reflect;2.12.7
+	configured resolver found for org.scala-lang#scala-reflect;2.12.7: redefined-public: saving this data
+	found ivy file in cache for org.scala-lang#scala-reflect;2.12.7 (resolved by redefined-public): /root/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.12.7.xml
+redefined-public: module revision found in cache: org.scala-lang#scala-reflect;2.12.7
+	found org.scala-lang#scala-reflect;2.12.7 in redefined-public
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [compile->compile(*)]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-reflect;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->master(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-reflect;2.12.7->org.scala-lang#scala-library;2.12.7 [compile->compile(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [compile->runtime(*)]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [compile->compile]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-reflect;2.12.7->org.scala-lang#scala-library;2.12.7 [runtime->runtime(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-reflect;2.12.7->org.scala-lang#scala-library;2.12.7 [runtime->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [compile->master(*)]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+	using redefined-public to resolve org.scala-lang.modules#scala-xml_2.12;1.0.6
+redefined-public: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
+No entry is found in the ModuleDescriptorCache : /root/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/ivy-1.0.6.xml
+post 1.3 ivy file: using exact as default matcher
+	resolver not found: null => trying to use the one configured for org.scala-lang.modules#scala-xml_2.12;1.0.6
+	configured resolver found for org.scala-lang.modules#scala-xml_2.12;1.0.6: redefined-public: saving this data
+	found ivy file in cache for org.scala-lang.modules#scala-xml_2.12;1.0.6 (resolved by redefined-public): /root/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/ivy-1.0.6.xml
+redefined-public: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.6
+	found org.scala-lang.modules#scala-xml_2.12;1.0.6 in redefined-public
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [compile->compile(*)]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.0 [compile->master(*)]
+loadData of org.scala-lang#scala-library;2.12.0 of rootConf=default
+default is evicted.  Skip loading
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.7 [compile->master(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.0 [compile->compile(*)]
+loadData of org.scala-lang#scala-library;2.12.0 of rootConf=default
+default is evicted.  Skip loading
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.7 [compile->compile(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [compile->runtime(*)]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [compile->compile]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.0 [runtime->runtime(*)]
+loadData of org.scala-lang#scala-library;2.12.0 of rootConf=default
+default is evicted.  Skip loading
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.7 [runtime->runtime(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang.modules#scala-xml_2.12;1.0.6->org.scala-lang#scala-library;2.12.7 [runtime->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [runtime->runtime(*)]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-library;2.12.7 [runtime->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [runtime->runtime(*)]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang#scala-reflect;2.12.7 [runtime->compile]
+loadData of org.scala-lang#scala-reflect;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [runtime->runtime(*)]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->org.scala-lang.modules#scala-xml_2.12;1.0.6 [runtime->compile]
+loadData of org.scala-lang.modules#scala-xml_2.12;1.0.6 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-compiler;2.12.7 [default->master]
+loadData of org.scala-lang#scala-compiler;2.12.7 of rootConf=default
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-compiler;2.12.7 [default->optional(default)]
+loadData of org.scala-lang#scala-compiler;2.12.7 of rootConf=default
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->jline#jline;2.14.6 [optional->master(*)]
+loadData of jline#jline;2.14.6 of rootConf=default
+	using redefined-public to resolve jline#jline;2.14.6
+redefined-public: Checking cache for: dependency: jline#jline;2.14.6 {optional=[compile(*), master(*)]}
+No entry is found in the ModuleDescriptorCache : /root/.ivy2/cache/jline/jline/ivy-2.14.6.xml
+post 1.3 ivy file: using exact as default matcher
+	resolver not found: null => trying to use the one configured for jline#jline;2.14.6
+	configured resolver found for jline#jline;2.14.6: redefined-public: saving this data
+	found ivy file in cache for jline#jline;2.14.6 (resolved by redefined-public): /root/.ivy2/cache/jline/jline/ivy-2.14.6.xml
+redefined-public: module revision found in cache: jline#jline;2.14.6
+	found jline#jline;2.14.6 in redefined-public
+== resolving dependencies org.scala-lang#scala-compiler;2.12.7->jline#jline;2.14.6 [optional->compile(*)]
+loadData of jline#jline;2.14.6 of rootConf=default
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-library;2.12.7 [default->default]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-library;2.12.7 [default->runtime]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-library;2.12.7 [default->compile]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+== resolving dependencies org.scala-sbt#boot-scala;1.0->org.scala-lang#scala-library;2.12.7 [default->master]
+loadData of org.scala-lang#scala-library;2.12.7 of rootConf=default
+default is loaded and no conf to load.  Skip loading
+Nbr of module to sort : 5
+Sort dependencies of : org.scala-lang#scala-compiler;2.12.7 / Number of dependencies = 4
+Sort dependencies of : org.scala-lang#scala-library;2.12.7 / Number of dependencies = 0
+Sort done for : org.scala-lang#scala-library;2.12.7
+Sort dependencies of : org.scala-lang#scala-reflect;2.12.7 / Number of dependencies = 1
+Module descriptor is processed : org.scala-lang#scala-library;2.12.7
+Sort done for : org.scala-lang#scala-reflect;2.12.7
+Sort dependencies of : org.scala-lang.modules#scala-xml_2.12;1.0.6 / Number of dependencies = 4
+Non matching revision detected when sorting.  org.scala-lang.modules#scala-xml_2.12 depends on org.scala-lang#scala-compiler;2.12.0, doesn't match org.scala-lang#scala-compiler;2.12.7
+Non matching revision detected when sorting.  org.scala-lang.modules#scala-xml_2.12 depends on org.scala-lang#scala-library;2.12.0, doesn't match org.scala-lang#scala-library;2.12.7
+Sort done for : org.scala-lang.modules#scala-xml_2.12;1.0.6
+Sort dependencies of : jline#jline;2.14.6 / Number of dependencies = 4
+Sort done for : jline#jline;2.14.6
+Sort done for : org.scala-lang#scala-compiler;2.12.7
+Module descriptor is processed : org.scala-lang#scala-library;2.12.7
+Module descriptor is processed : org.scala-lang#scala-reflect;2.12.7
+Module descriptor is processed : org.scala-lang.modules#scala-xml_2.12;1.0.6
+Module descriptor is processed : jline#jline;2.14.6
+storing dependency org.scala-lang#scala-compiler;2.12.7 in props
+storing dependency org.scala-lang#scala-library;2.12.7 in props
+	resolved ivy file produced in cache
+:: downloading artifacts ::
+	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.7!scala-compiler.jar
+	[NOT REQUIRED] org.scala-lang#scala-library;2.12.7!scala-library.jar
+	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.7!scala-reflect.jar
+	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
+	[NOT REQUIRED] jline#jline;2.14.6!jline.jar
+:: resolution report :: resolve 1250ms :: artifacts dl 155ms
+Nbr of module to sort : 5
+Sort dependencies of : org.scala-lang#scala-compiler;2.12.7 / Number of dependencies = 4
+Sort dependencies of : org.scala-lang#scala-library;2.12.7 / Number of dependencies = 0
+Sort done for : org.scala-lang#scala-library;2.12.7
+Sort dependencies of : org.scala-lang#scala-reflect;2.12.7 / Number of dependencies = 1
+Module descriptor is processed : org.scala-lang#scala-library;2.12.7
+Sort done for : org.scala-lang#scala-reflect;2.12.7
+Sort dependencies of : org.scala-lang.modules#scala-xml_2.12;1.0.6 / Number of dependencies = 4
+Non matching revision detected when sorting.  org.scala-lang.modules#scala-xml_2.12 depends on org.scala-lang#scala-compiler;2.12.0, doesn't match org.scala-lang#scala-compiler;2.12.7
+Non matching revision detected when sorting.  org.scala-lang.modules#scala-xml_2.12 depends on org.scala-lang#scala-library;2.12.0, doesn't match org.scala-lang#scala-library;2.12.7
+Sort done for : org.scala-lang.modules#scala-xml_2.12;1.0.6
+Sort dependencies of : jline#jline;2.14.6 / Number of dependencies = 4
+Sort done for : jline#jline;2.14.6
+Sort done for : org.scala-lang#scala-compiler;2.12.7
+Module descriptor is processed : org.scala-lang#scala-library;2.12.7
+Module descriptor is processed : org.scala-lang#scala-reflect;2.12.7
+Module descriptor is processed : org.scala-lang.modules#scala-xml_2.12;1.0.6
+Module descriptor is processed : jline#jline;2.14.6
+	report for org.scala-sbt#boot-scala;1.0 default produced in /root/.sbt/boot/resolution-cache/org.scala-sbt-boot-scala-default.xml
+	resolve done (1250ms resolve - 155ms download)
+setting 'scala' to '2.12.7'
+:: retrieving :: org.scala-sbt#boot-scala
+	checkUpToDate=true
+post 1.3 ivy file: using exact as default matcher
+no explicit confs given for retrieve, using ivy file: file:/root/.sbt/boot/resolution-cache/resolved-org.scala-sbt-boot-scala-1.0.xml
+	confs: [default]
+	retrieving /root/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.6.jar
+		to /root/.sbt/boot/scala-2.12.7/lib/scala-xml_2.12.jar
+	retrieving /root/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.7.jar
+		to /root/.sbt/boot/scala-2.12.7/lib/scala-reflect.jar
+	retrieving /root/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.12.7.jar
+		to /root/.sbt/boot/scala-2.12.7/lib/scala-compiler.jar
+	retrieving /root/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.7.jar
+		to /root/.sbt/boot/scala-2.12.7/lib/scala-library.jar
+	retrieving /root/.ivy2/cache/jline/jline/jars/jline-2.14.6.jar
+		to /root/.sbt/boot/scala-2.12.7/lib/jline.jar
+	5 artifacts copied, 0 already retrieved (19715kB/1561ms)
+	retrieve done (1561ms)
