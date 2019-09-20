@@ -55,7 +55,11 @@ object Test {
       .groupByKey()
       .mapValues(x => stableSort(x.toList, (_._2 > _._2) : ((String,Int),(String,Int)) => Boolean).slice(0,10))
 
-    result.take(3)
+    result.collect.foreach(a => {
+      println(a._1)
+      a._2.foreach(println)
+      println("")
+    })
 
     spark.stop()
   }
