@@ -1,4 +1,4 @@
-name := "Test"
+name := "GDELT_Dataset"
 
 version := "1.0"
 
