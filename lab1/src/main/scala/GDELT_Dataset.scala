@@ -116,7 +116,7 @@ object TopTenTopics {
       .toDF("date", "topics") // Name the columns of the dataframe
       .as[Result] // As case class Result
       .map(x => {
-        val date = x.date
+        val date = format.format(x.date)
         val topicList = x.topics
         (date, topicList.slice(0,10)) // Take the first 10 tuples of the topicList
       })
