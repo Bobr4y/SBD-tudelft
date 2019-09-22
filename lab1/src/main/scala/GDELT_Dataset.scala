@@ -3,6 +3,7 @@ package GDELT_Dataset
 import org.apache.spark.sql.SparkSession
 import scala.util.Sorting.stableSort
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions._
 import org.apache.spark.sql._
 import java.sql.Timestamp
 import scala.util.Sorting.stableSort
@@ -11,14 +12,16 @@ import org.apache.log4j.{Level, Logger}
 
 object TopTenTopics {
 
+  // topicsByDate case class
   case class topicsByDate (
       date: Timestamp,
       allNames: String
   )
 
-  case class result (
+  // The result case class
+  case class Result (
       date: Timestamp,
-      topic: List[List[(String, Int)]]
+      topics: List[(String, BigInt)]
   )
 
   def main(args: Array[String]) {
@@ -85,22 +88,45 @@ object TopTenTopics {
     // Select date and AllNames column from gdelt view and store into dataset
     val ds = spark.sql("SELECT DATE,ALLNames FROM gdelt").as[topicsByDate]
 
-    val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
+    // Dataframe with [date, topic, count]
+    val format = new java.text.SimpleDateFormat("yyyy-MM-dd") // Date formatter
     val singleTopicsByDate = ds
-        .filter(x => x.date != null)
-        .filter(x => x.allNames != null)
-        .filter(x => x.allNames.split(";").length > 1)
+        .filter(x => x.date != null)  // Check that date value is not null
+        .filter(x => x.allNames != null)  // Check that allNames value is not null
         .flatMap(x => {
             val date = format.format(x.date)
             val topics = x.allNames.split(";")
-            topics.map(a => (date, (a.split(",")(0), a.split(",")(1).toInt)))
+            topics
+              .filter(x => !(excludes.contains(x.split(",")(0)))) // Check that topic is not in excludes list
+              .map(a => (date, a.split(",")(0), a.split(",")(1).toInt)) // Map to [date, topic, count]
         })
-        .toDF("date", "topic")
+        .toDF("date", "topic", "count") // Name the columns of the dataframe
 
-    val result = singleTopicsByDate
-        .groupBy("date")
-        .agg(collect_list("topic"))
-    
+    // Group the topics by date and sort by descending count
+    val sorted = singleTopicsByDate
+      .groupBy('date, 'topic) // First group by date, then group by topic
+      .agg(sum('count)) // Aggregate by summing the count values
+      .toDF("date", "topic", "count") // Name the columns of the dataframe
+      .sort($"count".desc)  // Sort by desc count
+
+    // The result dataset [date, List[topic, count]]
+    val result = sorted
+      .groupBy('date) // Group by date
+      .agg(collect_list(struct('topic, 'count)))  // Aggregate by collecting a list of [topic, count]
+      .toDF("date", "topics") // Name the columns of the dataframe
+      .as[Result] // As case class Result
+      .map(x => {
+        val date = x.date
+        val topicList = x.topics
+        (date, topicList.slice(0,10)) // Take the first 10 tuples of the topicList
+      })
+
+    // Print loop to display results
+    result.collect.foreach(a => {
+      println(a._1)
+      a._2.foreach(println)
+      println("")
+    })
 
     spark.stop()
   }
