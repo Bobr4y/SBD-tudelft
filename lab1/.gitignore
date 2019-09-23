@@ -3,6 +3,8 @@
 
 dist/*
 target/
+data/
+data/*
 lib_managed/
 src_managed/
 project/boot/
