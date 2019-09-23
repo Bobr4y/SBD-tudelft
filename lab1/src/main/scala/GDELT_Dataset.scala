@@ -6,7 +6,6 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql._
 import java.sql.Timestamp
-import scala.util.Sorting.stableSort
 
 import org.apache.log4j.{Level, Logger}
 
@@ -122,11 +121,15 @@ object TopTenTopics {
       })
 
     // Print loop to display results
-    result.collect.foreach(a => {
-      println(a._1)
-      a._2.foreach(println)
-      println("")
-    })
+    // result.collect.foreach(a => {
+    //   println(a._1)
+    //   a._2.foreach(println)
+    //   println("")
+    // })
+    result
+      .repartition(1)
+      .write
+      .json("./data/result/test.json")
 
     spark.stop()
   }
