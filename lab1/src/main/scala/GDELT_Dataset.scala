@@ -129,7 +129,7 @@ object TopTenTopics {
     result
       .repartition(1)
       .write
-      .json("./data/result/test.json")
+      .json("./data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
 
     spark.stop()
   }
