@@ -1,5 +1,5 @@
 # Processing the GDELT dataset on AWS
-In this blog post we will evaluate the GDELT dataset on AWS elastic mapReduce (EMR). The goal is to process the dataset consisting of 157378 segments on 20 `c4.8xlarge` core nodes in under 30 minutes.
+In this blog post, the GDELT dataset will be evaluated on AWS elastic mapReduce (EMR). The goal is to process the dataset consisting of 157378 segments on 20 `c4.8xlarge` core nodes in under 30 minutes. Herefore, several steps will be performed to test the code.
 
 ## Tweaking the code to run on AWS
 - Move .jar and segments to s3
@@ -7,8 +7,8 @@ In this blog post we will evaluate the GDELT dataset on AWS elastic mapReduce (E
 - Change paths to s3
 - Option to read segments directly form GDELT s3
 
-## Test run 100 segments
-After adapting our code, a test run was performed on 100 segments using 3 `m4.large` machines (master and 2 nodes). The step in EMR, that processes the 100 segments, took 2 minutes to run. The resulting .json file can be seen below.
+## Processing 100 segments
+After adapting the code to work in the AWS environment, a test run was performed on 100 segments using 3 `m4.large` machines (master and 2 nodes). The step in EMR, that processes the 100 segments, took 2 minutes to run. The resulting .json file can be seen below.
 
 ```
 {"date":"2015-02-20","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":1975},{"topic":"Islamic State","count":1958},{"topic":"New York","count":1395},{"topic":"Cyclone Marcia","count":935},{"topic":"Los Angeles","count":823},{"topic":"United Kingdom","count":775},{"topic":"White House","count":713},{"topic":"Associated Press","count":702},{"topic":"Practice Wrestling Room","count":630},{"topic":"Softball Spring Practice Varsity","count":558}]}
@@ -21,9 +21,9 @@ After adapting our code, a test run was performed on 100 segments using 3 `m4.la
 From this .json file it can be seen that all the segments of 19-02-2015 have been processed, while this is probably not the case for 18-02 and 20-02 since these counts are lower.
 
 
-![Figure 2: Ganglia screenshot](./images/clusterMem.png)
+![Figure 1: Ganglia](./images/clusterMem.png)
 
-This was a preliminary test and it is now time to see how we perform on more segments.
+After this preliminary test, it is time to scale up to more segments.
 
 ## Processing 1000 segments
 
