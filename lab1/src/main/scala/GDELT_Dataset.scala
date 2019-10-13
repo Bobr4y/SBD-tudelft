@@ -27,11 +27,17 @@ object TopTenTopics {
 
     // Start spark session
     //val spark = SparkSession.builder.master("local").appName("GdeltAnalysis").getOrCreate()
-    val spark = SparkSession.builder.appName("GdeltAnalysis").getOrCreate() // We don't want the emr cluster to run in local mode
+    val spark = SparkSession.builder
+                      .appName("GdeltAnalysis")
+                      .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+                      .getOrCreate() // We don't want the emr cluster to run in local mode
+    
     val sc = spark.sparkContext
+    //val sc = new SparkContext(conf)
+
     import spark.implicits._
 
-    val numberOfSegments = 1000
+    val numberOfSegments = 10000
     val filesTxt = sc.textFile("s3://luppesbucket/data/gdeltv2gkg.txt").collect()
     //val filesTxt = sc.textFile("./data/gdeltv2gkg.txt").collect()
     var files = ""
@@ -90,6 +96,7 @@ object TopTenTopics {
         //.csv("s3://luppesbucket/data/segment/*.csv")
         //.csv("./data/segment/*.csv")
         .csv(files.split(','):_*)
+        //.csv("s3://gdelt-open-data/v2/gkg/*.csv")
 
     // Separate the AllNames column into single topics
     val topics = df.select('date, explode(split('AllNames, ";")))
@@ -120,6 +127,6 @@ object TopTenTopics {
       .json("s3://luppesbucket/data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
 
     // Stop the spark session
-    spark.stop()
+    sc.stop()
   }
 }
