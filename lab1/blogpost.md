@@ -20,7 +20,6 @@ After adapting the code to work in the AWS environment, a test run was performed
 
 From this .json file it can be seen that all the segments of 19-02-2015 have been processed, while this is probably not the case for 18-02 and 20-02 since these counts are lower.
 
-
 ![Figure 1: Ganglia](./images/clusterMem.png)
 
 After this preliminary test, it is time to scale up to more segments.
@@ -161,9 +160,8 @@ Similarly, this test was performed with 10.000 segments using 3 `m4.4xlarge` mac
 ## Processing Time with different amounts of Virtual Cores
 Below one can see an overview of the processing time of 1000 vs 10.000 segments using a `m4.large`, a `m4.xlarge` and `m4.4xlarge` respectively.
 
-
 ![Figure 2: graph](./images/graph.png)
 
-By linearly extrapolating, it could be concluded from this graph that 3 `m4.large` machines would take roughly 750 minutes. Similarly, 3 `m4.xlarge` machines would take roughly 200 minutes. Lastly,`m4.4xlarge` would process within 80 minutes. 
+By linearly extrapolating, it could be concluded from this graph that 3 `m4.large` machines would take roughly 750 minutes. Similarly, 3 `m4.xlarge` machines would take roughly 200 minutes. Lastly,`m4.4xlarge` would process within 80 minutes. If this would turn out to be a good estimation of the runtime, scaling the virtual cores of a node from 4 to 8 (x2) has more impact on the runtime than 8 to 32 (x4). 
 
 
