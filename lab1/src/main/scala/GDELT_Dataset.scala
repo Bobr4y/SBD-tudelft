@@ -8,7 +8,7 @@ import java.sql.Timestamp
 import java.util.Date
 import org.apache.spark.sql.expressions.Window
 
-
+import scala.util.control.Breaks._
 
 import org.apache.log4j.{Level, Logger}
 
@@ -24,11 +24,20 @@ object TopTenTopics {
     // Set log level to error to avoid all info logs
     Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
 
+
     // Start spark session
-    val spark = SparkSession.builder.master("local").appName("GdeltAnalysis").getOrCreate()
-    //val spark = SparkSession.builder.appName("GdeltAnalysis").getOrCreate() // We don't want the emr cluster to run in local mode
+    //val spark = SparkSession.builder.master("local").appName("GdeltAnalysis").getOrCreate()
+    val spark = SparkSession.builder.appName("GdeltAnalysis").getOrCreate() // We don't want the emr cluster to run in local mode
     val sc = spark.sparkContext
     import spark.implicits._
+
+    val numberOfSegments = 1000
+    val filesTxt = sc.textFile("s3://luppesbucket/data/gdeltv2gkg.txt").collect()
+    //val filesTxt = sc.textFile("./data/gdeltv2gkg.txt").collect()
+    var files = ""
+    for (i <- 0 to (numberOfSegments -1)) {
+      files = files.concat(filesTxt(i)).concat(",")
+    }
 
     // Define topics to exclude from the results
     val excludes = List(
@@ -79,7 +88,8 @@ object TopTenTopics {
         .option("dateFormat", "yyyyMMddHHmmss")
         .option("mode", "DROPMALFORMED")
         //.csv("s3://luppesbucket/data/segment/*.csv")
-        .csv("./data/segment/*.csv")
+        //.csv("./data/segment/*.csv")
+        .csv(files.split(','):_*)
 
     // Separate the AllNames column into single topics
     val topics = df.select('date, explode(split('AllNames, ";")))
@@ -106,8 +116,8 @@ object TopTenTopics {
     topTen
       .repartition(1)
       .write
-      .json("./data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
-      //.json("s3://luppesbucket/data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
+      //.json("./data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
+      .json("s3://luppesbucket/data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
 
     // Stop the spark session
     spark.stop()

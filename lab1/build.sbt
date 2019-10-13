@@ -10,3 +10,5 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion,
   "org.apache.spark" %% "spark-sql" % sparkVersion
 )
+
+libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.3.32" 
