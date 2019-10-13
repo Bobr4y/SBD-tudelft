@@ -78,7 +78,7 @@ object TopTenTopics {
         .schema(gdeltSchema)
         .option("dateFormat", "yyyyMMddHHmmss")
         .option("mode", "DROPMALFORMED")
-        //.read("s3://luppesbucket/data/segment/*.csv")
+        //.csv("s3://luppesbucket/data/segment/*.csv")
         .csv("./data/segment/*.csv")
 
     // Separate the AllNames column into single topics
@@ -107,6 +107,7 @@ object TopTenTopics {
       .repartition(1)
       .write
       .json("./data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
+      //.json("s3://luppesbucket/data/results/" + java.time.LocalDate.now.toString + "-" + System.currentTimeMillis().toString)
 
     // Stop the spark session
     spark.stop()
