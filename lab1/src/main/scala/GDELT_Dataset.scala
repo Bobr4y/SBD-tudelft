@@ -67,7 +67,11 @@ object TopTenTopics {
                         )
                       )
 
-    val spark = SparkSession.builder().config(sparkConf).getOrCreate()
+    val spark = SparkSession.builder()
+                        .config(sparkConf)
+                        .config("spark.kryoserializer.buffer", "1024k") 
+                        .config("spark.kryoserializer.buffer.max", "1024m") 
+                        .getOrCreate()
 
     // val spark = SparkSession.builder
     //                   .appName("GdeltAnalysis")

@@ -2,10 +2,13 @@
 In this blog post, the GDELT dataset will be evaluated on AWS elastic mapReduce (EMR). The goal is to process the dataset consisting of 157378 segments on 20 `c4.8xlarge` core nodes in under 30 minutes. Herefore, several steps will be performed to test the code.
 
 ## Tweaking the code to run on AWS
-- Move .jar and segments to s3
-- Remove .master('local') from code
-- Change paths to s3
-- Option to read segments directly form GDELT s3
+From the first assignment we have two implementations for processing the GDELT dataset, namely an RDD implementation and a DataFrame implementation. From this point on the DataFrame implementation is used because it was found to yield better performance when operating on a large number of segments.
+
+The code is slightly altered in order to run on EMR:
+
+- Remove .master('local') from `SparkSession.builder()` since this is automatically set by the cluster
+- Change input and output paths to s3
+- Read segments directly form GDELT s3 bucket
 
 ## Processing 100 segments
 After adapting the code to work in the AWS environment, a test run was performed on 100 segments using 3 `m4.large` machines (master and 2 nodes). The resulting .json file can be seen below.
