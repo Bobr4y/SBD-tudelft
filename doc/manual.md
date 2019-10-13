@@ -1374,7 +1374,7 @@ outgoing network, CPU load, memory pressure, and other useful metrics. They can
 help to characterize the workload at hand, and help optimizing computation
 times. An example of its interface is shown in fig. 2.
 
-![Figure 2: Ganglia screenshot](./images/ganglia.png)
+![Figure 2: Ganglia screenshot](./images/clusterMem.png)
 
 It’s not uncommon to run into problems when you first deploy your application
 to AWS, here are some general clues:
