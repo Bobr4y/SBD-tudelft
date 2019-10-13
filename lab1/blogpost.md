@@ -69,5 +69,10 @@ Therefore, runtime will not linearly decrease with doubling the amount of virtua
 
 ![Figure 2: graph](./images/aggregatedLoad.png)
 
+## Increasing performance using Kryo
+Kryo is a faster serializer that can be used instead of the default java serializer. From the figure below it can be seen that quite some data is shuffled around on the network.
+
+![Figure 2: graph](./images/clusterNetwork.png)
+
 ## Conclusion
 Apart from the fact that we have problems with the `c4.8xlarge` (Terminated with errors: The requested number of spot instances exceeds your limit), we expect our code to run within 30 minutes. As our code is expected to run within 80 minutes using 4 `m4.4xlarge` (each containing 32 virtual cores), scaling up the amount of nodes would result in run time of 15 minutes. Herin we take the assumption that the load is evenly spreadable over each node and that the code has a high percentage of parallelizability.
