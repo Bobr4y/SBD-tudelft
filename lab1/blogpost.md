@@ -74,5 +74,60 @@ Kryo is a faster serializer that can be used instead of the default java seriali
 
 ![Figure 2: graph](./images/clusterNetwork.png)
 
+This data has to be serialized with the slow java serializer. Kryo was addes as a serializer using
+
+```
+// Use Kryo
+    val sparkConf = new SparkConf()
+                      .setAppName("GdeltAnalysis")
+                      .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+                      .registerKryoClasses(
+                        Array(
+                          classOf[scala.collection.mutable.WrappedArray.ofRef[_]],
+                          classOf[org.apache.spark.sql.types.StructType],
+                          classOf[Array[org.apache.spark.sql.types.StructType]],
+                          classOf[org.apache.spark.sql.types.StructField],
+                          classOf[Array[org.apache.spark.sql.types.StructField]],
+                          Class.forName("org.apache.spark.sql.types.StringType$"),
+                          Class.forName("org.apache.spark.sql.types.LongType$"),
+                          Class.forName("org.apache.spark.sql.types.BooleanType$"),
+                          Class.forName("org.apache.spark.sql.types.DoubleType$"),
+                          Class.forName("[[B"),
+                          classOf[org.apache.spark.sql.types.Metadata],
+                          classOf[org.apache.spark.sql.types.ArrayType],
+                          Class.forName("org.apache.spark.sql.execution.joins.UnsafeHashedRelation"),
+                          classOf[org.apache.spark.sql.catalyst.InternalRow],
+                          classOf[Array[org.apache.spark.sql.catalyst.InternalRow]],
+                          classOf[org.apache.spark.sql.catalyst.expressions.UnsafeRow],
+                          Class.forName("org.apache.spark.sql.execution.joins.LongHashedRelation"),
+                          Class.forName("org.apache.spark.sql.execution.joins.LongToUnsafeRowMap"),
+                          classOf[org.apache.spark.util.collection.BitSet],
+                          classOf[org.apache.spark.sql.types.DataType],
+                          classOf[Array[org.apache.spark.sql.types.DataType]],
+                          Class.forName("org.apache.spark.sql.types.NullType$"),
+                          Class.forName("org.apache.spark.sql.types.IntegerType$"),
+                          Class.forName("org.apache.spark.sql.types.TimestampType$"),
+                          Class.forName("org.apache.spark.sql.execution.datasources.FileFormatWriter$WriteTaskResult"),
+                          Class.forName("org.apache.spark.internal.io.FileCommitProtocol$TaskCommitMessage"),
+                          Class.forName("scala.collection.immutable.Set$EmptySet$"),
+                          Class.forName("scala.reflect.ClassTag$$anon$1"),
+                          Class.forName("java.lang.Class")
+                        )
+                      )
+
+    val spark = SparkSession.builder()
+                        .config(sparkConf)
+                        .config("spark.kryoserializer.buffer", "1024k") 
+                        .config("spark.kryoserializer.buffer.max", "1024m") 
+                        .getOrCreate()
+```
+The mamimum buffer size is set to 1024m to accomodate the maximum network traffic. Also the most frequently used classes by spark are imported into the Kryo serializer to decrease the amount of serialization.
+
 ## Conclusion
-Apart from the fact that we have problems with the `c4.8xlarge` (Terminated with errors: The requested number of spot instances exceeds your limit), we expect our code to run within 30 minutes. As our code is expected to run within 80 minutes using 4 `m4.4xlarge` (each containing 32 virtual cores), scaling up the amount of nodes would result in run time of 15 minutes. Herin we take the assumption that the load is evenly spreadable over each node and that the code has a high percentage of parallelizability.
+Apart from the fact that we have problems with the `c4.8xlarge` 
+
+```
+Terminated with errors: The requested number of spot instances exceeds your limit
+```
+
+we expect our code to run within 30 minutes. As our code is expected to run within 80 minutes using 4 `m4.4xlarge` (each containing 32 virtual cores), scaling up the amount of nodes would result in run time of 15 minutes. Herin we take the assumption that the load is evenly spreadable over each node and that the code has a high percentage of parallelizability.
