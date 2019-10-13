@@ -20,8 +20,6 @@ After adapting the code to work in the AWS environment, a test run was performed
 
 From this .json file it can be seen that all the segments of 19-02-2015 have been processed, while this is probably not the case for 18-02 and 20-02 since these counts are lower.
 
-![Figure 1: Ganglia](./images/clusterMem.png)
-
 After this preliminary test, it is time to scale up to more segments.
 
 ## Processing 1000 segments
@@ -42,7 +40,6 @@ Now, the same test is performed with 1000 segments using 3 `m4.large` machines (
 {"date":"2015-02-22","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":10495},{"topic":"Islamic State","count":8726},{"topic":"New York","count":8279},{"topic":"United Kingdom","count":6547},{"topic":"Practice Wrestling Room","count":6460},{"topic":"Softball Spring Practice Varsity","count":5700},{"topic":"Associated Press","count":4114},{"topic":"Los Angeles","count":3927},{"topic":"President Barack Obama","count":3484},{"topic":"Sydney Morning","count":3202}]}
 {"date":"2015-02-21","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":11218},{"topic":"New York","count":8040},{"topic":"Practice Wrestling Room","count":6561},{"topic":"Islamic State","count":6545},{"topic":"Los Angeles","count":6386},{"topic":"White House","count":5853},{"topic":"Softball Spring Practice Varsity","count":5793},{"topic":"United Kingdom","count":5417},{"topic":"Sydney Morning","count":4813},{"topic":"Prime Minister","count":4619}]}
 ```
-![Figure 2: Ganglia screenshot](./images/clusterMem.png)
 
 
 ## Processing 10.000 segments
