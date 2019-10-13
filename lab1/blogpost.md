@@ -159,7 +159,7 @@ Similarly, this test was performed with 10.000 segments using 3 `m4.4xlarge` mac
 {"date":"2015-05-17","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"Islamic State","count":11471},{"topic":"United States","count":11339},{"topic":"New York","count":10239},{"topic":"United Kingdom","count":5175},{"topic":"High School","count":4803},{"topic":"New Zealand","count":4219},{"topic":"Associated Press","count":4119},{"topic":"Middle East","count":3933},{"topic":"American Pharoah","count":3778},{"topic":"Prime Minister","count":3304}]}
 ```
 ## Processing Time with different amounts of Virtual Cores
-Below one can see an overview of the processing time of 1000 vs 10.000 segments using a 'm4.large', a 'm4.xlarge' and 'm4.4xlarge' respectively.
+Below one can see an overview of the processing time of 1000 vs 10.000 segments using a `m4.large`, a `m4.xlarge` and `m4.4xlarge` respectively.
 
 
 ![Figure 2: graph](./images/graph.png)
