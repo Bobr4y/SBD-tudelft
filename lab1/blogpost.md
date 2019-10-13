@@ -162,6 +162,8 @@ Below one can see an overview of the processing time of 1000 vs 10.000 segments 
 
 ![Figure 2: graph](./images/graph.png)
 
-By linearly extrapolating, it could be concluded from this graph that 3 `m4.large` machines would take roughly 750 minutes. Similarly, 3 `m4.xlarge` machines would take roughly 200 minutes. Lastly,`m4.4xlarge` would process within 80 minutes. If this would turn out to be a good estimation of the runtime, scaling the virtual cores of a node from 4 to 8 (x2) has more impact on the runtime than 8 to 32 (x4). 
+By linearly extrapolating, it could be concluded from this graph that 3 `m4.large` machines would take roughly 750 minutes. Similarly, 3 `m4.xlarge` machines would take roughly 200 minutes. Lastly,`m4.4xlarge` would process within 80 minutes. If this would turn out to be a good estimation of the runtime, scaling the virtual cores of a node from 4 to 8 (x2) has more impact on the runtime than 8 to 32 (x4). This could be due to the fact that the code is not fully parallelizable. Improvements could be done, however according to Amdahl's law a 100% parallelizable code is impossible. Therefore, runtime will not linearly decrease with doubling the amount of virtual cores. Additionaly, when looking at the figure below, it can be concluded that the load is spread quite evenly along all nodes (except the master), meaning that adding more nodes will increase performance. 
+
+![Figure 2: graph](./images/aggregatedLoad.png)
 
 
