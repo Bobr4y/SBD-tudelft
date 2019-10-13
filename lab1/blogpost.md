@@ -24,6 +24,10 @@ This was a preliminary test and it is now time to see how we perform on more seg
 
 ## Processing 1000 segments
 
+![Figure 2: Ganglia screenshot](./images/clusterMem.png)
+
+
+
 ```
 {"date":"2015-02-25","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":24353},{"topic":"United Kingdom","count":15669},{"topic":"New York","count":14434},{"topic":"Islamic State","count":13650},{"topic":"White House","count":8128},{"topic":"Los Angeles","count":6486},{"topic":"New Zealand","count":6325},{"topic":"Practice Wrestling Room","count":6303},{"topic":"Homeland Security","count":5719},{"topic":"Softball Spring Practice Varsity","count":5543}]}
 {"date":"2015-03-01","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":4579},{"topic":"New York","count":3059},{"topic":"Practice Wrestling Room","count":2944},{"topic":"Softball Spring Practice Varsity","count":2530},{"topic":"United Kingdom","count":2463},{"topic":"Islamic State","count":2289},{"topic":"National Weather Service","count":1977},{"topic":"Sri Lanka","count":1623},{"topic":"Sydney Morning","count":1539},{"topic":"White House","count":1475}]}
