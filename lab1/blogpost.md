@@ -8,7 +8,7 @@ In this blog post, the GDELT dataset will be evaluated on AWS elastic mapReduce 
 - Option to read segments directly form GDELT s3
 
 ## Processing 100 segments
-After adapting the code to work in the AWS environment, a test run was performed on 100 segments using 3 `m4.large` machines (master and 2 nodes). The step in EMR, that processes the 100 segments, took 2 minutes to run. The resulting .json file can be seen below.
+After adapting the code to work in the AWS environment, a test run was performed on 100 segments using 3 `m4.large` machines (master and 2 nodes). The resulting .json file can be seen below.
 
 ```
 {"date":"2015-02-20","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":1975},{"topic":"Islamic State","count":1958},{"topic":"New York","count":1395},{"topic":"Cyclone Marcia","count":935},{"topic":"Los Angeles","count":823},{"topic":"United Kingdom","count":775},{"topic":"White House","count":713},{"topic":"Associated Press","count":702},{"topic":"Practice Wrestling Room","count":630},{"topic":"Softball Spring Practice Varsity","count":558}]}
@@ -48,7 +48,7 @@ Now, the same test is performed with 1000 segments using 3 `m4.large` machines (
 
 ## Processing 10.000 segments
 
-Similarly, this test was performed with 10.000 segments using 3 `m4.4xlarge` machines (master and 2 nodes). The step in EMR took 6 minutes to run. The resulting .json file can be seen below.
+Similarly, this test was performed with 10.000 segments using 3 `m4.4xlarge` machines (master and 2 nodes). The resulting .json file can be seen below.
 
 ```
 {"date":"2015-03-09","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"United States","count":21225},{"topic":"New York","count":14976},{"topic":"Islamic State","count":14757},{"topic":"United Kingdom","count":13611},{"topic":"Apple Watch","count":13338},{"topic":"White House","count":6758},{"topic":"Boko Haram","count":6566},{"topic":"Practice Wrestling Room","count":5760},{"topic":"Middle East","count":5378},{"topic":"Associated Press","count":5221}]}
@@ -159,5 +159,7 @@ Similarly, this test was performed with 10.000 segments using 3 `m4.4xlarge` mac
 {"date":"2015-05-17","collect_list(named_struct(NamePlaceholder(), topic, NamePlaceholder(), count))":[{"topic":"Islamic State","count":11471},{"topic":"United States","count":11339},{"topic":"New York","count":10239},{"topic":"United Kingdom","count":5175},{"topic":"High School","count":4803},{"topic":"New Zealand","count":4219},{"topic":"Associated Press","count":4119},{"topic":"Middle East","count":3933},{"topic":"American Pharoah","count":3778},{"topic":"Prime Minister","count":3304}]}
 ```
 ## Processing Time with different amounts of Virtual Cores
+Below one can see an overview of the processing time of 1000 vs 10.000 segments using a 'm4.large', a 'm4.xlarge' and 'm4.4xlarge' respectively.
 
-![Figure 2: Ganglia screenshot](./images/graph.png)
+
+![Figure 2: graph](./images/graph.png)
