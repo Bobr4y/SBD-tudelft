@@ -163,3 +163,7 @@ Below one can see an overview of the processing time of 1000 vs 10.000 segments 
 
 
 ![Figure 2: graph](./images/graph.png)
+
+By linearly extrapolating, it could be concluded from this graph that 3 `m4.large` machines would take roughly 750 minutes. Similarly, 3 `m4.xlarge` machines would take roughly 200 minutes. Lastly,`m4.4xlarge` would process within 80 minutes. 
+
+
