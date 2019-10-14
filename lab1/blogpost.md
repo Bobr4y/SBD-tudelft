@@ -109,12 +109,15 @@ val sparkConf = new SparkConf()
                         .config("spark.kryoserializer.buffer.max", "1024m") 
                         .getOrCreate()
 ```
-The maximum buffer size is set to 100m to accommodate the biggest class that needs to be serialized. Also the most frequently used classes by spark are imported into the Kryo serializer to decrease serialization overhead.
+The maximum buffer size is set to 10m to accommodate the biggest class that needs to be serialized. Also the most frequently used classes by spark are imported into the Kryo serializer to decrease serialization overhead. 
  
-Again the entire dataset was processed. No performance gain was seen in terms of runtime as the cluster also finished within 12 minutes. However, it became clear that the network peak was 700MB/s lower, which is of course a nice incidental. See the figure below.
+Again the entire dataset was processed. The performance in this case in terms of runtime was worse and the cluster finished within 15 minutes. However, it became clear that the network peak was 700MB/s lower, which is of course a nice incidental. See the figure below.
  
-PLAATJE NETWORK TRAFFIC KRYO 100M
+![Figure 4: graph](./images/clusterNetwork_c4.8xlarge_Kryo-10mBuffer.png)
  
+Next we tried to increase the buffer to 100m. This decreased the runtime to 12 minutes, which is similar to the runtime without Kryo. See the figure below. 
+ 
+![Figure 5: graph](./images/clusterNetwork_c4.8xlarge_Kryo.png)
  
  
 ## Conclusion
