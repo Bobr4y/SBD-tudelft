@@ -32,6 +32,7 @@ object TopTenTopics {
     // Use Kryo
     val sparkConf = new SparkConf()
                       .setAppName("GdeltAnalysis")
+                      //.setMaster("local")
                       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
                       .registerKryoClasses(
                         Array(
@@ -59,7 +60,6 @@ object TopTenTopics {
                           Class.forName("org.apache.spark.sql.types.NullType$"),
                           Class.forName("org.apache.spark.sql.types.IntegerType$"),
                           Class.forName("org.apache.spark.sql.types.TimestampType$"),
-                          Class.forName("org.apache.spark.sql.execution.datasources.FileFormatWriter$WriteTaskResult"),
                           Class.forName("org.apache.spark.internal.io.FileCommitProtocol$TaskCommitMessage"),
                           Class.forName("scala.collection.immutable.Set$EmptySet$"),
                           Class.forName("scala.reflect.ClassTag$$anon$1"),
@@ -69,7 +69,7 @@ object TopTenTopics {
 
     val spark = SparkSession.builder()
                         .config(sparkConf)
-                        .config("spark.kryoserializer.buffer", "1024k") 
+                        .config("spark.kryoserializer.buffer", "500m") 
                         .config("spark.kryoserializer.buffer.max", "1024m") 
                         .getOrCreate()
 
@@ -83,13 +83,13 @@ object TopTenTopics {
 
     import spark.implicits._
 
-    val numberOfSegments = 10000
-    val filesTxt = sc.textFile("s3://luppesbucket/data/gdeltv2gkg.txt").collect()
-    //val filesTxt = sc.textFile("./data/gdeltv2gkg.txt").collect()
-    var files = ""
-    for (i <- 0 to (numberOfSegments -1)) {
-      files = files.concat(filesTxt(i)).concat(",")
-    }
+    // val numberOfSegments = 10000
+    // val filesTxt = sc.textFile("s3://luppesbucket/data/gdeltv2gkg.txt").collect()
+    // //val filesTxt = sc.textFile("./data/gdeltv2gkg.txt").collect()
+    // var files = ""
+    // for (i <- 0 to (numberOfSegments -1)) {
+    //   files = files.concat(filesTxt(i)).concat(",")
+    // }
 
     // Define topics to exclude from the results
     val excludes = List(
@@ -141,8 +141,8 @@ object TopTenTopics {
         .option("mode", "DROPMALFORMED")
         //.csv("s3://luppesbucket/data/segment/*.csv")
         //.csv("./data/segment/*.csv")
-        .csv(files.split(','):_*)
-        //.csv("s3://gdelt-open-data/v2/gkg/*.csv")
+        //.csv(files.split(','):_*)
+        .csv("s3://gdelt-open-data/v2/gkg/*.csv")
 
     // Separate the AllNames column into single topics
     val topics = df.select('date, explode(split('AllNames, ";")))
